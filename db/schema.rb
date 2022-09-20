@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_20_092617) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_20_094150) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_20_092617) do
     t.string "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "doc_id"
+    t.index ["doc_id"], name: "index_awards_on_doc_id"
   end
 
   create_table "directors", force: :cascade do |t|
@@ -68,4 +70,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_20_092617) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "awards", "docs"
 end
