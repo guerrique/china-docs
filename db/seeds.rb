@@ -8,7 +8,7 @@
 puts "Cleaning database..."
 Doc.destroy_all
 User.destroy_all
-Directors.destroy_all
+Director.destroy_all
 
 guerrique = User.create!(email: "guerrique@gmail.com", password: "guegue321!", admin: true)
 puts "Finished!"
