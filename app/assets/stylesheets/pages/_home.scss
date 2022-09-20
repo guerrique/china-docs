@@ -1,1 +1,219 @@
 // Specific CSS for your home-page
+
+input[type=checkbox]
+{
+  height: 12px;
+}
+
+.btn-input {
+  width: 20%;
+}
+
+.btn-danger:active {
+  background-color: #a0272d;
+}
+
+.search-results {
+  margin-top: 2.8rem;
+}
+
+// Specific CSS for your home-page
+
+.hero {
+  background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), asset-url('hero2.jpg');
+  background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), asset-url('hero2.jpg');
+  background-size: cover;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 1.2rem 2.4rem 1.2rem;
+  box-shadow: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.1);
+  z-index: 0;
+  position: absolute;
+  top: Orem;
+  right: 0;
+  left: 0;
+}
+
+.sections {
+  padding-top: 19rem;
+}
+
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.page {
+  position: absolute;
+  top: 12rem;
+  right: 0;
+  left: 0;
+}
+
+/**********************************************/
+/*SECTION LINK*/
+/**********************************************/
+
+.section-findby {
+  height: 12rem;
+  margin: 2.4rem auto;
+  // box-shadow: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.1);
+}
+
+.section-find-by a:link,
+.section-findby a:visited {
+  pointer: cursor;
+}
+
+.section-findby-author {
+  text-decoration: none;
+  background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), asset-url('link-author.jpg');
+  background-size: 130%;
+  background-position: left center;
+}
+
+.section-findby-title {
+  background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), asset-url('link-movie1.png');
+  background-size: 100%;
+  background-position: center top;
+}
+
+
+.flexbox-center {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.findby-box {
+  padding: 3.2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: #555;
+}
+
+/**********************************************/
+/*SECTION RANDOM PICK*/
+/**********************************************/
+
+.section-featured {
+  margin: 2.4rem auto;
+  background-color: rgba(160, 39, 45, 0.35);
+  padding: 1.2rem 0 2.4rem 0;
+}
+
+.featured-title {
+  color: #fff;
+  padding: 1.2rem 0;
+
+}
+
+.featured-box {
+  padding: 2.4rem;
+  background-color: #fff;
+  border: 5px solid #a0272d;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.featured-box a:link,
+.featured-box a:visited {
+  color: #555;
+  pointer: cursor;
+}
+
+.featured-box img {
+  width: 100%;
+  padding-top: 2.4rem;
+}
+
+
+/**********************************************/
+/*DIRECTORS PAGE*/
+/**********************************************/
+
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-text h1 {
+    text-transform: uppercase;
+    font-size: 3.6rem;
+}
+
+.grid-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 1.8rem;
+    margin-top: 2rem;
+}
+
+.section-authors {
+  width: 90%;
+  // grid-row: 3;
+  justify-self: end;
+  overflow: scroll;
+}
+
+.authors-list {
+  padding-left: 0.8rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.6rem;
+  margin-bottom: 4.8rem;
+}
+
+.authors-list li {
+  font-size: 2rem;
+}
+
+.authors-list li p {
+  font-size: 1.2rem;
+  font-color: $gray;
+}
+
+.input-box{
+  position: relative;
+    display: flex;
+  justify-content: center;
+}
+
+.input-box i {
+  position: absolute;
+  right: 13px;
+  top:15px;
+  color:#ced4da;
+}
+
+.form-control{
+  height: 50px;
+  background-color:#eeeeee69;
+  font-size: 2rem;
+  color: #777;
+}
+
+.form-control:focus{
+  background-color: #eeeeee69;
+  box-shadow: none;
+  border-color: #eee;
+}
+

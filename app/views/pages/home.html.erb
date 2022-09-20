@@ -1,2 +1,52 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+  <div class="hero fixed-top">
+    <%= simple_form_for :search, url: search_path, method: "GET" do |f| %>
+      <div class="d-flex my-search">
+        <%= text_field_tag :query, params[:query], class: "form-control me-2", placeholder: "Search" %>
+        <%= f.button :submit, 'Search', class: "btn btn-danger btn-input" %>
+      </div>
+    <% end %>
+  </div>
+
+
+  <div class="sections">
+    <div class="sections-flexbox">
+      <%= link_to directors_path  do %>
+        <div class="section-findby section-findby-author">
+            <div class="container flexbox-center">
+                <div class="findby-box">
+                  <h2>Documentaries</h2>
+                  <p>by author</p>
+                </div>
+            </div>
+        </div>
+      <% end %>
+
+      <%= link_to docs_path do %>
+        <div class="section-findby section-findby-title">
+            <div class="container flexbox-center">
+                <div class="findby-box">
+                  <h2>Documentaries</h2>
+                  <p>by title</p>
+                </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
+
+<!--   <div class="section-featured">
+    <div class="container">
+      <h1 class="featured-title">Featured this week</h1>
+      <div class="featured-box">
+        <%# doc = Doc.find(Doc.ids.sample) %>
+          <h2><%#= doc.name %></h2>
+          <a class="featured-link-author" href="#"><p>by <%# doc.directors.each do |director| %>
+            <%#= link_to director.name, director_path(director) %>
+            <%#= director.name %> <%# end %>
+          </p></a>
+          <a class="featured-link-movie" href="#">
+            <%#= image_tag "behemoth.jpg", alt: "Behemoth Poster", class: "img_preview" %>
+          </a>
+      </div>
+    </div>
+  </div> -->
+</div>
