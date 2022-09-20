@@ -1,0 +1,33 @@
+  <div class="header-text">
+    <p>documentaries</p>
+    <h1>By author</h1>
+  </div>
+  <div class="grid-container">
+    <div class="index-search">
+      <%= form_tag directors_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search"
+        %>
+      <% end %>
+    </div>
+
+    <div class="section-authors">
+      <% @directors = @directors.order("name ASC").group_by{ |u| u.name[0] }  %>
+      <% @directors.each do |letter, directors| %>
+        <h1 class="abc-title"><%= letter %></h1>
+        <ul class="authors-list">
+           <% directors.each do |director| %>
+          <li> <%= link_to director.name, director_path(director) %>
+            <% if current_user %>
+              <% if current_user.admin? %>
+            <p> <%= link_to "Edit", edit_director_path(director) %> <%= link_to "Delete", director_path(director), method: :delete, data: { confirm: 'Are you sure you want to delete this item?'} %></p>
+              <% end %>
+            <% end %>
+            </li>
+        <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
