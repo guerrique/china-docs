@@ -46,6 +46,8 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 # My Gems
+gem "cocoon"
+gem 'jquery-rails'
 gem "cloudinary"
 gem 'pg_search'
 
