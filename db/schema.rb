@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_20_094150) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_20_100512) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_20_094150) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "links", force: :cascade do |t|
+    t.string "description"
+    t.string "url"
+    t.bigint "doc_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doc_id"], name: "index_links_on_doc_id"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "description"
+    t.string "url"
+    t.bigint "director_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["director_id"], name: "index_pages_on_director_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.bigint "director_id"
     t.bigint "doc_id"
@@ -71,4 +89,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_20_094150) do
   end
 
   add_foreign_key "awards", "docs"
+  add_foreign_key "links", "docs"
+  add_foreign_key "pages", "directors"
 end
