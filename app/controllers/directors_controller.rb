@@ -43,7 +43,7 @@ class DirectorsController < ApplicationController
     @director = Director.find(params[:id])
     @director.destroy
 
-    redirect_to directors_path
+    redirect_to directors_path, status: :see_other
   end
 
   private
