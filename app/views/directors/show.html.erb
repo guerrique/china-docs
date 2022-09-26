@@ -17,8 +17,7 @@
         <div class="section-author-text">
           <h1> <%= @director.name %> </h1>
             <div class="doc-summary">
-              <p><%= @director.bio_short %></p>
-              <p><%= @director.bio_long %>
+              <p><%= @director.bio %></p>
 
               <span>Source <%= @director.bio_source %></span>
               </p>
@@ -56,7 +55,11 @@
       <% if current_user %>
         <% if current_user.admin? %>
           <div> <%= link_to "Edit", edit_director_path(@director) %>
-                <%= link_to "Delete", director_path(@director), method: :delete %>
+            <%= link_to "Delete", director_path(@director), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+                <%#= link_to "Delete", director_path(@director), method: :delete %>
           </div>
         <% end %>
       <% end %>

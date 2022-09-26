@@ -43,7 +43,7 @@ class DirectorsController < ApplicationController
     @director = Director.find(params[:id])
     @director.destroy
 
-    redirect_to directors_path
+    redirect_to directors_path, status: :see_other
   end
 
   private
@@ -51,8 +51,7 @@ class DirectorsController < ApplicationController
   def director_params
     params.require(:director)
     .permit(:name,
-      :bio_short,
-      :bio_long,
+      :bio,
       :bio_source,
       :birth_year,
       :death_year,

@@ -1,10 +1,8 @@
 <%= simple_form_for @director, url: director_path do |f| %>
   <%= f.label :name %>
   <p> <%= f.text_field :name %></p>
-  <p> <%= f.label :bio_short %></p>
-  <p> <%= f.text_field :bio_short %></p>
-  <p> <%= f.label :bio_long %></p>
-  <p> <%= f.text_field :bio_long %></p>
+  <p> <%= f.label :bio %></p>
+  <p> <%= f.text_field :bio %></p>
   <p> <%= f.label :bio_source %></p>
   <p> <%= f.text_field :bio_source %></p>
   <p> <%= f.label :birth_year %></p>
